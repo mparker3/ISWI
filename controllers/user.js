@@ -239,6 +239,18 @@ exports.getReset = (req, res, next) => {
  * POST /reset/:token
  * Process the reset password request.
  */
+
+
+ /**
+  * GET /user
+  */
+ exports.getUserById = (req, res, next) => {
+   res.render('user', {
+     title: 'user',
+     user_id: req.params.user_id
+   });
+};
+
 exports.postReset = (req, res, next) => {
   req.assert('password', 'Password must be at least 4 characters long.').len(4);
   req.assert('confirm', 'Passwords must match.').equals(req.body.password);
@@ -407,12 +419,3 @@ exports.postMentors = (req, res, next) => {
 
 };
 */
-
-/**
- * GET /user
- */
-exports.getUser = (req, res) => {
-  res.render('user', {
-    title: 'user'
-  });
-};
