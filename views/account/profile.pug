@@ -20,6 +20,16 @@ block content
         input.form-control(type='text', name='ID', id='id', value=user.id)
 
     .form-group
+      label.col-sm-3.control-label Mentor/Mentee?
+      .col-sm-6
+        label.radio.col-sm-3
+          input(type='radio', name='mentor', value=true, data-toggle='radio')
+          span Mentor
+        label.radio.col-sm-3
+          input(type='radio', name='mentor', value=false, data-toggle='radio')
+          span Mentee
+
+    .form-group
       label.col-sm-3.control-label Gender
       .col-sm-6
         label.radio.col-sm-3
