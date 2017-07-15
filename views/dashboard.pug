@@ -16,7 +16,8 @@ block content
         br
         - console.log(user)
         .div(align='left')
-          p Name: #{user["profile"]["name"]}
+          h3 Name: #{user["profile"]["name"]}
+          p Role: #{user["profile"]["mentor"]}
           p Country of Origin: #{user["profile"]["origin"]}
           p Language: #{user["profile"]["languages"]}
           p Age: #{user["profile"]["age"]}

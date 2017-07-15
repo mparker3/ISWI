@@ -433,7 +433,7 @@ exports.getUserById = (req, res, next) => {
 };
 
 exports.getDashboard = (req, res, next) => {
-  User.find({ mentor: { $ne: req.user.profile.mentor } }, (err, users) => {
+  User.find({ mentor: { $ne: req.user.profile.mentor }, id: { $ne: req.user.id } }, (err, users) => {
     if (err) { return next(err); }
     res.render('dashboard', {
       usersInfo: users
