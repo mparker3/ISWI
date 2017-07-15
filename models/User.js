@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     gender: String,
     origin: String,
     age: Number,
-    mentor: Boolean,
+    mentor: String,
     connections: Array,
     languages: String
   }
