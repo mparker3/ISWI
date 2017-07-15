@@ -3,12 +3,7 @@ extends layout
 block content
   h1 Homecoming
   p.lead Find friends in the most unfamiliar places.
-  hr
 
-  div(class="text-center")
-    iframe(type='text/html' width='1140' height = '694'
-    src='https://www.youtube.com/embed/kCNHCkgKqHc?autoplay=1'
-    frameborder='0' align='center')
   hr
   .row
     .col-sm-6(align='center')
@@ -31,3 +26,17 @@ block content
       h2 Create a community that feels like home
       br
       br
+  .row
+    .col-sm-6(align='center')
+      a(href="create")
+      button(type="button") Login
+    .col-sm-6(align='center')
+      a(href="create")
+      button(type="button") Create an account
+
+  br
+
+  div(class="text-center")
+    iframe(type='text/html' width='1140' height = '694'
+    src='https://www.youtube.com/embed/kCNHCkgKqHc?autoplay=1'
+    frameborder='0' align='center')
