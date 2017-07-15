@@ -17,7 +17,11 @@ block content
           span Mentor
         label.radio.col-sm-3
           input(type='radio', name='mentor', value='mentee', data-toggle='radio')
-          span Mentee
+          span Mentee  
+    .form-group
+      label.col-sm-3.control-label(for='zipcode') Zip Code
+      .col-sm-7
+        input.form-control(type='zipcode', name='zipcode', id='zipcode', placeholder='Zip Code', autofocus, required)
     .form-group
       label.col-sm-3.control-label(for='origin') Country of Origin
       .col-sm-7
@@ -29,7 +33,7 @@ block content
     .form-group
       label.col-sm-3.control-label(for='language') Age
       .col-sm-7
-        input.form-control(type='age', name='age', id='age', placeholder='age', autofocus, required)
+        input.form-control(type='age', name='age', id='age', placeholder='Age', autofocus, required)
     .form-group
       label.col-sm-3.control-label(for='email') Email
       .col-sm-7
