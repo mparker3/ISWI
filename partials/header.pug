@@ -13,12 +13,12 @@
       ul.nav.navbar-nav
         li(class=(title == 'Home') ? 'active' : undefined)
           a(href='/') Home
-        li(class=(title == 'API Examples') ? 'active' : undefined)
-          a(href='/api') API Examples
-        li(class=(title == 'Contact') ? 'active' : undefined)
-          a(href='/contact') Contact
-        li
-          a(href='/status') Status
+        if user
+          li(class=(title == 'Dashboard') ? 'active' : undefined)
+            a(href='/dashboard') Dashboard
+          li(class=(title == 'Find Mentors') ? 'active' : undefined)
+            a(href='/find-mentors') Find Mentors
+
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=(title == 'Login') ? 'active' : undefined)

@@ -374,3 +374,45 @@ exports.postForgot = (req, res, next) => {
     .then(() => res.redirect('/forgot'))
     .catch(next);
 };
+
+/**
+ * GET /dashboard
+ */
+exports.getDashboard = (req, res) => {
+  res.render('dashboard', {
+    title: 'Dashboard'
+  });
+};
+
+/**
+ * POST /dashboard
+
+exports.postDashboard = (req, res, next) => {
+
+};
+*/
+/**
+ * GET /find-mentors
+ */
+exports.getMentors = (req, res) => {
+  res.render('find-mentors', {
+    title: 'Find Mentors'
+  });
+};
+
+/**
+ * POST /find-mentors
+
+exports.postMentors = (req, res, next) => {
+
+};
+*/
+
+/**
+ * GET /user
+ */
+exports.getUser = (req, res) => {
+  res.render('user', {
+    title: 'user'
+  });
+};
