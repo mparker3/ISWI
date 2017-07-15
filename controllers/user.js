@@ -247,7 +247,6 @@ exports.getReset = (req, res, next) => {
   * GET /user
   */
 
-
 exports.postReset = (req, res, next) => {
   req.assert('password', 'Password must be at least 4 characters long.').len(4);
   req.assert('confirm', 'Passwords must match.').equals(req.body.password);
@@ -387,11 +386,12 @@ exports.postForgot = (req, res, next) => {
 /**
  * GET /dashboard
  */
-exports.getDashboard = (req, res) => {
+/**exports.getDashboard = (req, res) => {
   res.render('dashboard', {
     title: 'Dashboard'
   });
 };
+**/
 
 /**
  * POST /dashboard
@@ -427,6 +427,16 @@ exports.getUserById = (req, res, next) => {
       gender: user.profile.gender,
       origin: user.profile.origin,
       languages: user.profile.languages
+    });
+  });
+};
+
+exports.getDashboard = (req, res, next) => {
+  User.find({}, (err, users) => {
+    if (err) { return next(err); }
+    res.render('dashboard', {
+      users_info: users,
+      views_to_generate: users.length
     });
   });
 };
