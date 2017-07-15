@@ -6,6 +6,31 @@ block content
   form.form-horizontal(id='signup-form', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
+      label.col-sm-3.control-label(for='name') Name
+      .col-sm-7
+        input.form-control(type='name', name='name', id='name', placeholder='Name', autofocus, required)
+    .form-group
+      label.col-sm-3.control-label Mentor/Mentee?
+      .col-sm-6
+        label.radio.col-sm-3
+          input(type='radio', name='mentor', value='mentor', data-toggle='radio')
+          span Mentor
+        label.radio.col-sm-3
+          input(type='radio', name='mentor', value='mentee', data-toggle='radio')
+          span Mentee
+    .form-group
+      label.col-sm-3.control-label(for='origin') Country of Origin
+      .col-sm-7
+        input.form-control(type='origin', name='origin', id='origin', placeholder='Country of Origin', autofocus, required)
+    .form-group
+      label.col-sm-3.control-label(for='language') Language
+      .col-sm-7
+        input.form-control(type='language', name='language', id='language', placeholder='Language', autofocus, required)
+    .form-group
+      label.col-sm-3.control-label(for='language') Age
+      .col-sm-7
+        input.form-control(type='age', name='age', id='age', placeholder='age', autofocus, required)
+    .form-group
       label.col-sm-3.control-label(for='email') Email
       .col-sm-7
         input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
@@ -17,6 +42,7 @@ block content
       label.col-sm-3.control-label(for='confirmPassword') Confirm Password
       .col-sm-7
         input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', required)
+
     .form-group
       .col-sm-offset-3.col-sm-7
         button.btn.btn-success(type='submit')
