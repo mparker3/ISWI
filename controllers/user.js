@@ -103,7 +103,7 @@ exports.postSignup = (req, res, next) => {
         if (err) {
           return next(err);
         }
-        res.redirect('/');
+        res.redirect('/account');
       });
     });
   });
@@ -123,6 +123,8 @@ exports.getAccount = (req, res) => {
  * POST /account/profile
  * Update profile information.
  */
+
+
 exports.postUpdateProfile = (req, res, next) => {
   req.assert('email', 'Please enter a valid email address.').isEmail();
   req.sanitize('email').normalizeEmail({ gmail_remove_dots: false });
@@ -139,8 +141,8 @@ exports.postUpdateProfile = (req, res, next) => {
     user.email = req.body.email || '';
     user.profile.name = req.body.name || '';
     user.profile.gender = req.body.gender || '';
-    user.profile.location = req.body.location || '';
-    user.profile.website = req.body.website || '';
+    user.profile.origin = req.body.origin || '';
+    user.profile.languages = req.body.languages || '';
     user.save((err) => {
       if (err) {
         if (err.code === 11000) {
@@ -239,6 +241,13 @@ exports.getReset = (req, res, next) => {
  * POST /reset/:token
  * Process the reset password request.
  */
+
+
+ /**
+  * GET /user
+  */
+
+
 exports.postReset = (req, res, next) => {
   req.assert('password', 'Password must be at least 4 characters long.').len(4);
   req.assert('confirm', 'Passwords must match.').equals(req.body.password);
@@ -408,11 +417,16 @@ exports.postMentors = (req, res, next) => {
 };
 */
 
-/**
- * GET /user
- */
-exports.getUser = (req, res) => {
-  res.render('user', {
-    title: 'user'
+exports.getUserById = (req, res, next) => {
+  User.findById(req.params.user_id, (err, user) => {
+    if (err) { return next(err); }
+    res.render('user', {
+      email: user.email,
+      id: user.id,
+      name: user.profile.name,
+      gender: user.profile.gender,
+      origin: user.profile.origin,
+      languages: user.profile.languages
+    });
   });
 };
