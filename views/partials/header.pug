@@ -11,8 +11,6 @@
         | Homecoming
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        li(class=(title == 'Home') ? 'active' : undefined)
-          a(href='/') Home
         if user
           li(class=(title == 'Dashboard') ? 'active' : undefined)
             a(href='/dashboard') Dashboard
