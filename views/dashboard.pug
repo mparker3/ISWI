@@ -10,15 +10,16 @@ block content
   br
 
   each user in usersInfo
-    .row
-      .col-sm-4(align='center')
-        img(src='https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png', height=60, margin-top=10)
-        br
-        - console.log(user)
-        .div(align='left')
-          p Name: #{user["profile"]["name"]}
-          p Country of Origin: #{user["profile"]["origin"]}
-          p Language: #{user["profile"]["languages"]}
-          p Age: #{user["profile"]["age"]}
-        br
-        br
+      .row(style="background-color:grey; padding: 30px; margin: 20px; border-radius: 30px")
+        div(align='left')
+        .col-sm-4(align='center')
+          img(src='https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png', height=60, margin-top=10)
+          br
+          - console.log(user)
+          div(align='left')
+            p Name: #{user["profile"]["name"]}
+            p Country of Origin: #{user["profile"]["origin"]}
+            p Language: #{user["profile"]["languages"]}
+            p Age: #{user["profile"]["age"]}
+          br
+          br
