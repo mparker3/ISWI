@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     origin_country: String,
     languages: Array,
     connections: Array, //array of users (the mentors for a mentee or vice versa)
-    mentor: Boolean, //whether the user is a mentor or not. True == mentor
+    mentor: Boolean //whether the user is a mentor or not. True == mentor
   }
 }, { timestamps: true });
 
