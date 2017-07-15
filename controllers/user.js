@@ -149,6 +149,7 @@ exports.postUpdateProfile = (req, res, next) => {
     user.profile.gender = req.body.gender || '';
     user.profile.origin = req.body.origin || '';
     user.profile.languages = req.body.languages || '';
+    user.profile.mentor = req.body.mentor || '';
     user.save((err) => {
       if (err) {
         if (err.code === 11000) {
@@ -441,8 +442,7 @@ exports.getDashboard = (req, res, next) => {
   User.find({}, (err, users) => {
     if (err) { return next(err); }
     res.render('dashboard', {
-      users_info: users,
-      views_to_generate: users.length
+      usersInfo: users
     });
   });
 };
