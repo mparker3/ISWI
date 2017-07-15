@@ -132,6 +132,7 @@ app.get('/dashboard', userController.getDashboard);
 app.get('/find-mentors', userController.getMentors);
 //app.post('/find-mentors', userController.postMentors);
 app.get('/user/:user_id', userController.getUserById);
+app.get('/map', userController.getMap);
 
 
 /**

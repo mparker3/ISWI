@@ -17,6 +17,12 @@ exports.getLogin = (req, res) => {
   });
 };
 
+exports.getMap = (req, res) => {
+  res.render('map', {
+    title: 'Mentor map'
+  });
+};
+
 /**
  * POST /login
  * Sign in using email and password.
