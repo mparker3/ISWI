@@ -20,9 +20,10 @@ const userSchema = new mongoose.Schema({
   profile: {
     name: String,
     gender: String,
-    location: String,
-    website: String,
-    picture: String
+    origin_country: String,
+    languages: Array,
+    connections: Array, //array of users (the mentors for a mentee or vice versa)
+    mentor: Boolean, //whether the user is a mentor or not. True == mentor
   }
 }, { timestamps: true });
 
