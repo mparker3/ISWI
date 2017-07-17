@@ -15,6 +15,21 @@ block content
       .col-sm-7
         input.form-control(type='text', name='name', id='name', value=user.profile.name)
     .form-group
+      label.col-sm-3.control-label(for='ID') ID
+      .col-sm-7
+        input.form-control(type='text', name='ID', id='id', value=user.id)
+
+    .form-group
+      label.col-sm-3.control-label Mentor/Mentee?
+      .col-sm-6
+        label.radio.col-sm-3
+          input(type='radio', checked=user.profile.mentor=='mentor', name='mentor', value='mentor', data-toggle='radio')
+          span Mentor
+        label.radio.col-sm-3
+          input(type='radio', checked=user.profile.mentor=='mentee', name='mentor', value='mentee', data-toggle='radio')
+          span Mentee
+
+    .form-group
       label.col-sm-3.control-label Gender
       .col-sm-6
         label.radio.col-sm-3
@@ -27,13 +42,13 @@ block content
           input(type='radio', checked=user.profile.gender=='other', name='gender', value='other', data-toggle='radio')
           span Other
     .form-group
-      label.col-sm-3.control-label(for='location') Location
+      label.col-sm-3.control-label(for='origin') Origin
       .col-sm-7
-        input.form-control(type='text', name='location', id='location', value=user.profile.location)
+        input.form-control(type='text', name='origin', id='origin', value=user.profile.origin)
     .form-group
-      label.col-sm-3.control-label(for='website') Website
+      label.col-sm-3.control-label(for='languages') Languages Spoken
       .col-sm-7
-        input.form-control(type='text', name='website', id='website', value=user.profile.website)
+        input.form-control(type='text', name='languages', id='languages', value=user.profile.languages)
     .form-group
       label.col-sm-3.control-label Gravatar
       .col-sm-4
